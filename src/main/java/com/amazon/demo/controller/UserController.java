@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.amazon.demo.model.User;
 import com.amazon.demo.service.UserService;
 import com.amazon.demo.dto.UserDto;
+import com.amazon.demo.exception.EmailAlreadyExistsException;
 
 @RestController
 @RequestMapping("/user")
@@ -21,9 +22,11 @@ public class UserController {
 	
 	
 	@PostMapping("/saveuser")
-	public ResponseEntity<?> saveUserInfo(@RequestBody User user){
-	    	userservice.saveUserInfo(user);
-	    	return ResponseEntity.status(HttpStatus.OK).body(user);
+	public ResponseEntity<Boolean> saveUserInfo(@RequestBody User user){
+		
+	    	 boolean success= userservice.saveUserInfo(user);
+	    	return ResponseEntity.status(HttpStatus.OK).body(success);
+	    	
 	    }
 	
 	@PostMapping("/checkuser")
