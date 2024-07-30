@@ -17,16 +17,18 @@ public class Product {
 	private String description;
 	private double price;
 	private String image;
+	private String category;
 	
 	public Product() {}
 	
-	public Product(int id, String name, String description, double price, String image) {
+	public Product(int id, String name, String description, double price, String image, String category) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
 		this.image = image;
+		this.category = category;
 	}
 	public int getId() {
 		return id;
@@ -58,5 +60,13 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
+	
 	
 }

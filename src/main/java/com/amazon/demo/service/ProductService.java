@@ -7,5 +7,5 @@ import com.amazon.demo.model.Product;
 public interface ProductService {
 	
 	List<Product> getProduct();
-
+	Product deleteProduct(int id);
 }
